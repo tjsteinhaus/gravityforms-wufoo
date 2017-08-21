@@ -7,7 +7,7 @@ class GFWufooAddOn extends GFFeedAddOn {
     protected $_version = GF_WUFOO_ADDON_VERSION;
     protected $_min_gravityforms_version = '1.9';
     protected $_slug = 'wufooaddon';
-    protected $_path = 'gravityforms-wufoo/wufooaddon.php';
+    protected $_path = plugins_url( 'wufooaddon.php', __FILE__ );
     protected $_full_path = __FILE__;
     protected $_title = 'Gravity Forms Wufoo Add-On';
     protected $_short_title = 'Wufoo Add-On';
