@@ -63,12 +63,16 @@ class GFWufooAddOn extends GFFeedAddOn {
 
         // Send the values to the third-party service.
         $wufoo = $this->connect_to_wufoo();
+        $form_fields = (array) $wufoo->getFields( $feed['meta']['form_hash'] );
+        $form_fields = $form_fields['Fields'];
         $post_fields = array();
         // Loop through all form fields that were submitted
         foreach( $merge_vars as $fieldID => $fieldValue ) {
             // Check to see if we have a date field and then fix formatting
-            if( @$form_fields_from_db[$fieldID]->Type == 'date' ) {
+            if( @$form_fields[$fieldID]->Type == 'date' ) {
                 $fieldValue = str_replace( '-', '', $fieldValue );
+            } elseif( @$form_fields[$fieldID]->Type == 'time' ) {
+                $fieldValue = date( "H:i", strtotime( $fieldValue ) ).':00';
             }
             $post_fields[] = new \WufooSubmitField( $fieldID, esc_attr( $fieldValue ) );
         }
