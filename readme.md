@@ -1,4 +1,5 @@
-===Gravity Forms + Wufoo===
+=== Gravity Forms + Wufoo ===
+
 Donate link: http://tylersteinhaus.com
 Tags: gravity forms, wufoo, forms, gravity
 Requires at least: 3.5
