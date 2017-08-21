@@ -37,4 +37,8 @@ This section describes how to install the plugin and get it working.
 * First Release
  
 * List versions from most recent at top to oldest at bottom.
+
+#### Todo's
+
+- [ ] Refactor code
  
