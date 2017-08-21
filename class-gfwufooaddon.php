@@ -79,8 +79,6 @@ class GFWufooAddOn extends GFFeedAddOn {
 
         // Sends data to Wufoo for submission
         $submitToWufoo = $wufoo->entryPost( $feed['meta']['form_hash'], $post_fields );
-
-        echo '<pre>'; print_r( $submitToWufoo ); echo '</pre>'; exit();
     }
 
     /**
@@ -218,19 +216,7 @@ class GFWufooAddOn extends GFFeedAddOn {
     public function feed_list_columns() {
         return array(
             'feedName'  => esc_html__( 'Name', 'wufooaddon' ),
-            'form_hash' => esc_html__( 'Form Hash', 'wufooaddon' ),
         );
-    }
-
-    /**
-     * Format the value to be displayed in the mytextbox column.
-     *
-     * @param array $feed The feed being included in the feed list.
-     *
-     * @return string
-     */
-    public function get_column_value_form_hash( $feed ) {
-        return '<b>' . rgars( $feed, 'form_hash' ) . '</b>';
     }
 
     /**
