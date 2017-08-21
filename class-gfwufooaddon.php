@@ -1,14 +1,15 @@
 <?php
+/**
+ * Gravity Forms to Wufoo Forms
+ */
 
 GFForms::include_feed_addon_framework();
 
 class GFWufooAddOn extends GFFeedAddOn {
 
     protected $_version = GF_WUFOO_ADDON_VERSION;
-    protected $_min_gravityforms_version = '1.9';
+    protected $_min_gravityforms_version = '2.0';
     protected $_slug = 'wufooaddon';
-    protected $_path = plugins_url( 'wufooaddon.php', __FILE__ );
-    protected $_full_path = __FILE__;
     protected $_title = 'Gravity Forms Wufoo Add-On';
     protected $_short_title = 'Wufoo Add-On';
 
@@ -140,7 +141,29 @@ class GFWufooAddOn extends GFFeedAddOn {
      * @return array
      */
     public function feed_settings_fields() {
-        return array(
+
+        // Make sure we are connected to Wufoo, otherwise this errors out.
+        try {
+            $wufoo = $this->connect_to_wufoo();
+            $wufoo->getForms();
+        } catch( WufooException $e ) {
+            echo 'There was an issue with your API Key and Subdomain.';
+            return;
+        }
+
+        $fieldMap = array();
+
+        // Make sure there is a form hash before we load the fields in.
+        if( $this->get_setting( 'form_hash' ) ) {
+            $fieldMap = array(
+                'name' => 'fieldMap',
+                'label' => esc_html__('Wufoo Forms to Gravity Forms', 'wufooaddon'),
+                'type' => 'field_map',
+                'field_map' => $this->get_wufoo_fields($wufoo)
+            );
+        }
+
+        $fields = array(
             array(
                 'title'  => esc_html__( 'Wufoo Feed Settings', 'wufooaddon' ),
                 'fields' => array(
@@ -158,18 +181,15 @@ class GFWufooAddOn extends GFFeedAddOn {
                         'tooltip' => esc_html__( 'Identifies your form from Wufoo', 'wufooaddon' ),
                         'class'   => 'medium',
                     ),
-                    array(
-                        'name'      => 'fieldMap',
-                        'label'     => esc_html__( 'Gravity Forms to Wufoo', 'wufooaddon' ),
-                        'type'      => 'field_map',
-                        'field_map' => $this->get_wufoo_fields()
-                    ),
-                ),
-            ),
+                    $fieldMap
+                )
+            )
         );
+
+        return $fields;
     }
 
-    public function get_wufoo_fields() {
+    public function get_wufoo_fields( $wufoo ) {
         $wufoo = $this->connect_to_wufoo();
         $form_id = $this->get_setting( 'form_hash' );
         $fields = $wufoo->getFields( $form_id );

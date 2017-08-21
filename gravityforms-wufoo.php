@@ -3,7 +3,7 @@
 Plugin Name: Gravity Forms + Wufoo Forms
 Plugin URI: https://www.tylersteinhaus.com
 Description: A simple plugin that allows you to pass data to Wufoo forms from your Gravity Form
-Version: 1.0
+Version: 1.1
 Author: Tyler Steinhaus
 Author URI: https://tylersteinhaus.com
 
@@ -25,7 +25,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 */
 
-define( 'GF_WUFOO_ADDON_VERSION', '1.0' );
+define( 'GF_WUFOO_ADDON_VERSION', '1.1' );
 
 add_action( 'gform_loaded', array( 'GF_Wufoo_AddOn_Bootstrap', 'load' ), 5 );
 

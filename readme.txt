@@ -1,12 +1,13 @@
 === Gravity Forms + Wufoo ===
 
-Donate link: http://tylersteinhaus.com<br />
-Tags: gravity forms, wufoo, forms, gravity<br />
-Requires at least: 3.5<br />
-Tested up to: 4.8.1<br />
-Stable tag: 4.8.1<br />
-License: GPLv2 or later<br />
-License URI: http://www.gnu.org/licenses/gpl-2.0.html<br />
+Contributors: Tyler Steinhaus
+Donate link: http://tylersteinhaus.com
+Tags: gravity forms, wufoo, forms, gravity
+Requires at least: 3.5
+Tested up to: 4.8.1
+Stable tag: 4.8.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
 Connects Gravity Forms and Wufoo together
  
@@ -20,7 +21,6 @@ You may ask why would I use both Wufoo and Gravity Forms when the form fields ar
  
 This section describes how to install the plugin and get it working.
  
- 
 1. Upload `gravityforms-wufoo` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Goto Forms->Settings in Gravity Forms
@@ -30,12 +30,15 @@ This section describes how to install the plugin and get it working.
 1. Now go to a form you would like to setup to use Wufoo
 1. Click Settings->Wufoo Add-On
 1. Create your feed and link up all the form fields
- 
+
+== Screenshots ==
+
+1. This screenshot shows the setup page
+2. This shows the wufoo form feed
+
 == Changelog ==
  
 = 1.0 =
 * First Release
  
 * List versions from most recent at top to oldest at bottom.
-
- 
