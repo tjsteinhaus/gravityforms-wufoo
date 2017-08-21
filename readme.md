@@ -1,22 +1,22 @@
-=== Gravity Forms + Wufoo ===
+# Gravity Forms + Wufoo
 
-Donate link: http://tylersteinhaus.com
-Tags: gravity forms, wufoo, forms, gravity
-Requires at least: 3.5
-Tested up to: 4.8.1
-Stable tag: 4.8.1
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Donate link: http://tylersteinhaus.com<br />
+Tags: gravity forms, wufoo, forms, gravity<br />
+Requires at least: 3.5<br />
+Tested up to: 4.8.1<br />
+Stable tag: 4.8.1<br />
+License: GPLv2 or later<br />
+License URI: http://www.gnu.org/licenses/gpl-2.0.html<br />
  
 Connects Gravity Forms and Wufoo together
  
-== Description ==
+### Description
  
 Wufoo only has a couple options to embed their forms on your website and all of them are sloppy. Gravity Forms + Wufoo allows you to still use Wufoo but allows you to embed your form on your website by using the power of Gravity Forms.
 
 You may ask why would I use both Wufoo and Gravity Forms when the form fields are exactly the same, and to that I say some clients want to stick with Wufoo and don't want to make the transition to a new form software. This allows you to create  the forms on a website but in a format that's easy to work with. 
  
-== Installation ==
+### Installation
  
 This section describes how to install the plugin and get it working.
  
@@ -31,7 +31,7 @@ This section describes how to install the plugin and get it working.
 1. Click Settings->Wufoo Add-On
 1. Create your feed and link up all the form fields
  
-== Changelog ==
+### Changelog
  
 = 1.0 =
 * First Release
