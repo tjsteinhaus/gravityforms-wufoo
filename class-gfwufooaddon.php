@@ -32,11 +32,8 @@ class GFWufooAddOn extends GFFeedAddOn {
      * Plugin starting point. Handles hooks, loading of language files and PayPal delayed payment support.
      */
     public function init() {
-
         parent::init();
-
     }
-
 
     // # FEED PROCESSING -----------------------------------------------------------------------------------------------
 
@@ -56,10 +53,8 @@ class GFWufooAddOn extends GFFeedAddOn {
         // Loop through the fields from the field map setting building an array of values to be passed to the third-party service.
         $merge_vars = array();
         foreach( $field_map as $name => $field_id ) {
-
             // Get the field value for the specified field id
             $merge_vars[$name] = $this->get_field_value( $form, $entry, $field_id );
-
         }
 
         // Send the values to the third-party service.
@@ -221,7 +216,9 @@ class GFWufooAddOn extends GFFeedAddOn {
         $wufoo_subdomain = $this->get_plugin_setting( 'wufoo_subdomain' );
         $form_id = $this->get_setting( 'form_hash' );
 
-        require_once( 'vendor/wufoo/WufooApiWrapper.php' );
+        if( !class_exists( 'WufooApiWrapper' ) ) {
+          require_once( 'vendor/wufoo/WufooApiWrapper.php' );
+        }
 
         $wufoo = new \WufooApiWrapper( $wufoo_api_key, $wufoo_subdomain );
 

@@ -36,7 +36,7 @@ class GF_Wufoo_AddOn_Bootstrap {
         if ( ! method_exists( 'GFForms', 'include_addon_framework' ) ) {
             return;
         }
-
+        
         require_once( 'class-gfwufooaddon.php' );
 
         GFAddOn::register( 'GFWufooAddOn' );
