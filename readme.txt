@@ -3,7 +3,7 @@
 Contributors: Tyler Steinhaus
 Donate link: http://tylersteinhaus.com
 Tags: gravity forms, wufoo, forms, gravity
-Requires at least: 3.5
+Requires at least: 4.5
 Tested up to: 4.8.1
 Stable tag: 4.8.1
 License: GPLv2 or later

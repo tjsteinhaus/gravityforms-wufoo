@@ -43,7 +43,3 @@ class GF_Wufoo_AddOn_Bootstrap {
     }
 
 }
-
-function gf_wufoo_addon() {
-    return GFWufooAddOn::get_instance();
-}
